@@ -39,7 +39,8 @@ app.get('/about', (req, res) => {
 app.get('/help', (req, res) => {
   res.render('help', {
     title: 'Help Page',
-    message: 'This is Jagadeeswara Reddy ',
+    message:
+      'This is Weather application , Provide place name to Weather information ',
     name: 'Jagadeeswara Reddy',
     help_active: 'active',
   });
@@ -74,19 +75,6 @@ app.get('/weather', (req, res) => {
       });
     }
   );
-});
-
-app.get('/product', (req, res) => {
-  if (!req.query.search) {
-    return res.send({
-      error: 'You must provide search term',
-    });
-  }
-
-  console.log(req.query);
-  res.send({
-    product: [],
-  });
 });
 
 app.get('/help/*', (req, res) => {
